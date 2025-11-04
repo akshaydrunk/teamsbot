@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.20/MicrosoftTeams.schema.json",
+  "version": "1.0.0",
+  "manifestVersion": "1.20",
+  "id": "{{BOT_ID}}",
+  "name": {
+    "short": "MyBot",
+    "full": "MyBot"
+  },
+  "developer": {
+    "name": "Your Company Name",
+    "websiteUrl": "https://yourcompany.com",
+    "privacyUrl": "https://yourcompany.com/privacy",
+    "termsOfUseUrl": "https://yourcompany.com/termsOfUse"
+  },
+  "description": {
+    "short": "A short description of your bot.",
+    "full": "A more detailed description of your bot, explaining its features and purpose."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "configurableTabs": [
+    {
+      "configurationUrl": "{{APP_BASE_URL}}/tab-config.html",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupChat"
+      ],
+      "context": [
+        "privateChatTab",
+        "channelTab"
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "notifyDashboard",
+      "name": "Dashboard",
+      "contentUrl": "{{APP_BASE_URL}}/tab.html",
+      "websiteUrl": "{{APP_BASE_URL}}",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "{{BOT_ID}}",
+      "scopes": [
+        "team",
+        "personal",
+        "groupChat"
+      ],
+      "isNotificationOnly": false,
+      "supportsCalling": false,
+      "supportsVideo": false,
+      "supportsFiles": false
+    }
+  ],
+  "validDomains": [
+    "{{APP_BASE_DOMAIN}}"
+  ],
+  "webApplicationInfo": {
+    "id": "{{BOT_ID}}",
+    "resource": "https://botframework.com"
+  },
+  "devicePermissions": [
+    "notifications"
+  ],
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "ChannelMember.Read.Group",
+          "type": "Application"
+        },
+        {
+          "name": "ChannelMessage.Read.Group",
+          "type": "Application"
+        },
+        {
+          "name": "Member.Read.Group",
+          "type": "Application"
+        },
+        {
+          "name": "TeamMember.Read.Group",
+          "type": "Application"
+        }
+      ]
+    }
+  }
+}
