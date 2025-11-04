@@ -48,6 +48,8 @@ For the initial setup, the bot needs to be accessible from the public internet s
     ```
 3.  **Copy the ngrok URL:** `ngrok` will provide a public HTTPS URL (e.g., `https://xxxx-xx-xx-xx-xx.ngrok-free.app`).
 4.  **Update your bot's messaging endpoint:** In the Teams Developer Portal, go to your app, and under "App features", update the messaging endpoint to `YOUR_NGROK_URL/api/messages`.
+    
+    **Important Note:** You must update this messaging endpoint in the Teams Developer Portal whenever your bot's public URL changes (e.g., a new ngrok session) or when you switch to an internal endpoint. While both public (e.g., ngrok) and private (e.g., `http://localhost:3978`) endpoints can be used for sending proactive messages once recipients are registered, the `recipients.json` file is generated and updated only when Teams successfully sends an installation event to your bot. This initial installation event requires your bot to be accessible via a public endpoint.
 
 ### 3. Uploading the Bot to Teams
 
